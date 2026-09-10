@@ -2,7 +2,7 @@ export const translations = {
   sv: {
     app: {
       title: 'LifeAtlas',
-      tagline: 'Every day tells a story',
+      tagline: 'Your daily map to a better life',
       subtitle: 'Svensk kalender, humörkurva & målinriktad livsstilsplanerare',
       footerLeft: 'LifeAtlas • Svenska helgdagar & namnsdagar',
       footerRight: 'Byggd för AWS EC2 • Strikt lokal browserlagring per användare',
@@ -256,7 +256,7 @@ export const translations = {
   en: {
     app: {
       title: 'LifeAtlas',
-      tagline: 'Every day tells a story',
+      tagline: 'Your daily map to a better life',
       subtitle: 'Calendar, mood curve diagram & goal-oriented life organizer',
       footerLeft: 'LifeAtlas • US Federal Holidays & Observances',
       footerRight: 'Built for AWS EC2 • Strict per-user local browser storage',
