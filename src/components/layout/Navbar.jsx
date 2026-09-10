@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { 
+  LayoutDashboard,
   Calendar as CalendarIcon, 
   Smile, 
   Target, 
@@ -30,6 +31,7 @@ export default function Navbar({
   const { t, lang, setLang } = useLanguage();
 
   const navItems = [
+    { id: 'dashboard', label: t('nav.dashboard'), icon: LayoutDashboard },
     { id: 'calendar', label: t('nav.calendar'), icon: CalendarIcon },
     { id: 'mood', label: t('nav.mood'), icon: Smile },
     { id: 'stats', label: t('nav.stats'), icon: TrendingUp },

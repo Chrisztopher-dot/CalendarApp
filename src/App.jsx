@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
+import DashboardView from './components/dashboard/DashboardView';
 import LoginModal from './components/auth/LoginModal';
 import CalendarView from './components/calendar/CalendarView';
 import MoodTracker from './components/mood/MoodTracker';
@@ -21,7 +22,7 @@ export default function App() {
   const { t, lang, dateLocale } = useLanguage();
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
   const [userData, setUserData] = useState(null);
-  const [activeTab, setActiveTab] = useState('calendar');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [isBackupOpen, setIsBackupOpen] = useState(false);
 
   // Global Quick Mood Check-in Modal
@@ -127,6 +128,16 @@ export default function App() {
 
       {/* Main Content Body */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {activeTab === 'dashboard' && (
+          <DashboardView
+            userData={userData}
+            currentUser={currentUser}
+            onOpenMoodCheckIn={handleOpenMoodCheckIn}
+            setActiveTab={setActiveTab}
+            userEmail={currentUser.email}
+          />
+        )}
+
         {activeTab === 'calendar' && (
           <CalendarView
             events={userData?.events || []}
