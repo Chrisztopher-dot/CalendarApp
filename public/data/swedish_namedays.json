@@ -1,0 +1,15 @@
+{
+  "source": "Svenska Akademiens namnlängd",
+  "description": "Swedish Name Days and Public Holidays Static Reference",
+  "fixedHolidays": [
+    { "date": "01-01", "name": "Nyårsdagen", "redDay": true },
+    { "date": "01-06", "name": "Trettondedag jul", "redDay": true },
+    { "date": "04-30", "name": "Valborgsmässoafton", "redDay": false, "eve": true },
+    { "date": "05-01", "name": "Första maj", "redDay": true },
+    { "date": "06-06", "name": "Sveriges nationaldag", "redDay": true },
+    { "date": "12-24", "name": "Julafton", "redDay": true, "eve": true },
+    { "date": "12-25", "name": "Juldagen", "redDay": true },
+    { "date": "12-26", "name": "Annandag jul", "redDay": true },
+    { "date": "12-31", "name": "Nyårsafton", "redDay": true, "eve": true }
+  ]
+}
