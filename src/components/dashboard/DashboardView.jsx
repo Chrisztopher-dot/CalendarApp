@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { format } from 'date-fns';
 import { 
   Smile, 
@@ -23,6 +23,8 @@ import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { getDayCalendarInfo } from '../../data/calendarHolidays.js';
 import { MOOD_LEVELS } from '../../data/moodConstants.js';
 import { updateItem } from '../../services/storage.js';
+import MoodCurveDiagram from '../stats/MoodCurveDiagram';
+import DayDetailDrawer from '../stats/DayDetailDrawer';
 
 export default function DashboardView({ 
   userData, 
@@ -35,6 +37,7 @@ export default function DashboardView({
   const now = new Date();
   const todayStr = format(now, 'yyyy-MM-dd');
   const currentHour = now.getHours();
+  const [inspectedDate, setInspectedDate] = useState(null);
 
   const events = userData?.events || [];
   const moods = userData?.moods || [];
@@ -524,7 +527,13 @@ export default function DashboardView({
         </div>
       </div>
 
-      {/* 4. Bottom Row: Recent Journal Note & Photo Memories */}
+      {/* 4. Interactive Mood Curve Diagram */}
+      <MoodCurveDiagram
+        moods={moods}
+        onSelectDay={(dateStr) => setInspectedDate(dateStr)}
+      />
+
+      {/* 5. Bottom Row: Recent Journal Note & Photo Memories */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Recent Note Card */}
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-3">
@@ -601,6 +610,17 @@ export default function DashboardView({
           )}
         </div>
       </div>
+
+      {/* Side Drawer for Inspected Day from Diagram */}
+      <DayDetailDrawer
+        dateStr={inspectedDate}
+        onClose={() => setInspectedDate(null)}
+        moods={moods}
+        events={events}
+        goals={goals}
+        notes={notes}
+        media={media}
+      />
     </div>
   );
 }
