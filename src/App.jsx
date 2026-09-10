@@ -84,6 +84,8 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         currentUser={currentUser}
+        userData={userData}
+        onOpenMoodCheckIn={handleOpenMoodCheckIn}
         onOpenBackup={() => setIsBackupOpen(true)}
       />
 

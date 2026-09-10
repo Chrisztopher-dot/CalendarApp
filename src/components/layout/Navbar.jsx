@@ -16,8 +16,16 @@ import {
 } from 'lucide-react';
 import { logoutUser, resetDemoData } from '../../services/auth';
 import { useLanguage } from '../../i18n/LanguageContext';
+import NotificationBell from './NotificationBell';
 
-export default function Navbar({ activeTab, setActiveTab, currentUser, onOpenBackup }) {
+export default function Navbar({ 
+  activeTab, 
+  setActiveTab, 
+  currentUser, 
+  onOpenBackup,
+  userData,
+  onOpenMoodCheckIn
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, lang, setLang } = useLanguage();
 
@@ -108,6 +116,13 @@ export default function Navbar({ activeTab, setActiveTab, currentUser, onOpenBac
               </button>
             )}
 
+            {/* Notification Reminder Bell */}
+            <NotificationBell 
+              userData={userData}
+              onOpenMoodCheckIn={onOpenMoodCheckIn}
+              setActiveTab={setActiveTab}
+            />
+
             <button
               onClick={onOpenBackup}
               title={t('nav.backup')}
@@ -141,6 +156,11 @@ export default function Navbar({ activeTab, setActiveTab, currentUser, onOpenBac
 
           {/* Mobile menu hamburger button */}
           <div className="flex items-center space-x-2 md:hidden">
+            <NotificationBell 
+              userData={userData}
+              onOpenMoodCheckIn={onOpenMoodCheckIn}
+              setActiveTab={setActiveTab}
+            />
             <button
               onClick={toggleLanguage}
               className="px-2 py-1 rounded bg-slate-800 text-xs font-bold text-slate-200"

@@ -250,6 +250,28 @@ export const translations = {
       importDesc: 'Återställ eller flytta data från en tidigare sparad JSON-fil.',
       isolationNote: 'Data isoleras strikt per e-post i nyckeln:',
       close: 'Stäng'
+    },
+    notifications: {
+      title: 'Påminnelser',
+      emptyTitle: 'Allt är klart för idag! 🎉',
+      emptyDesc: 'Du har inga väntande registreringar eller förfallna mål just nu.',
+      pendingCount: 'väntande',
+      moodSection: 'Känsloregistrering',
+      goalsSection: 'Mål & Uppgifter',
+      moodMorningTitle: 'Förmiddagshumör saknas',
+      moodMorningDesc: 'Hur startade din morgon? Välj humör & aktivitet.',
+      logMorningBtn: 'Logga förmiddag',
+      moodAfternoonTitle: 'Eftermiddagshumör saknas',
+      moodAfternoonDesc: 'Hur har dagen varit fram till nu? Checka in.',
+      logAfternoonBtn: 'Logga eftermiddag',
+      moodEveningTitle: 'Kvällshumör saknas',
+      moodEveningDesc: 'Summera kvällen och avrunda din dag.',
+      logEveningBtn: 'Logga kväll',
+      goalOverdueDesc: 'Förfallet mål',
+      goalDueTodayDesc: 'Förfaller idag',
+      viewGoalBtn: 'Visa mål',
+      markDone: 'Klar',
+      allClear: 'Alla dagens registreringar är gjorda',
     }
   },
 
@@ -504,6 +526,28 @@ export const translations = {
       importDesc: 'Restore or transfer data from a previously saved JSON file.',
       isolationNote: 'Data is strictly isolated per email in the key:',
       close: 'Close'
+    },
+    notifications: {
+      title: 'Reminders',
+      emptyTitle: 'All caught up for today! 🎉',
+      emptyDesc: 'You have no pending check-ins or overdue goals right now.',
+      pendingCount: 'pending',
+      moodSection: 'Mood Check-ins',
+      goalsSection: 'Goals & Tasks',
+      moodMorningTitle: 'Morning check-in missing',
+      moodMorningDesc: 'How did your day start? Pick your mood & activity.',
+      logMorningBtn: 'Log Morning',
+      moodAfternoonTitle: 'Afternoon check-in missing',
+      moodAfternoonDesc: 'How is your day going so far? Check in now.',
+      logAfternoonBtn: 'Log Afternoon',
+      moodEveningTitle: 'Evening check-in missing',
+      moodEveningDesc: 'Reflect on your evening and wrap up your day.',
+      logEveningBtn: 'Log Evening',
+      goalOverdueDesc: 'Overdue goal',
+      goalDueTodayDesc: 'Due today',
+      viewGoalBtn: 'View Goal',
+      markDone: 'Done',
+      allClear: 'All daily check-ins are up to date',
     }
   }
 };
