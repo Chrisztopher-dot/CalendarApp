@@ -6,7 +6,7 @@ export const SECTIONS = [
   { id: 'Work', label: 'Arbete & Karriär', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
   { id: 'Health', label: 'Hälsa & Träning', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
   { id: 'Activities', label: 'Aktiviteter & Socialt', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-  { id: 'Hobbies', label: 'Hobby & Intressen', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
+  { id: 'Hobbies', label: 'Aktiviteter & Kreativitet', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
   { id: 'Production', label: 'Skapande & Produktion', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
 ];
 
