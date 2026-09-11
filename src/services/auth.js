@@ -129,3 +129,43 @@ export function resetDemoData() {
 export function logoutUser() {
   setCurrentUser(null);
 }
+
+/**
+ * Check if an account exists for the given email
+ */
+export function checkUserExists(email) {
+  const cleanEmail = (email || '').toLowerCase().trim();
+  if (!cleanEmail) return false;
+  if (cleanEmail === DEMO_USER.email.toLowerCase()) return true;
+  const users = getRegisteredUsers();
+  return !!users.find(u => u.email === cleanEmail);
+}
+
+/**
+ * Reset password for a registered account
+ */
+export function resetUserPassword(email, newPassword) {
+  const cleanEmail = (email || '').toLowerCase().trim();
+  if (!cleanEmail || !cleanEmail.includes('@')) {
+    throw new Error('Please provide a valid email address.');
+  }
+  if (!newPassword || newPassword.length < 4) {
+    throw new Error('Password must be at least 4 characters long.');
+  }
+
+  // Demo user password reset is simulated
+  if (cleanEmail === DEMO_USER.email.toLowerCase()) {
+    return true;
+  }
+
+  const users = getRegisteredUsers();
+  const index = users.findIndex(u => u.email === cleanEmail);
+  if (index === -1) {
+    throw new Error('No user found with this email. Please verify the email address.');
+  }
+
+  users[index].passwordHash = btoa(newPassword);
+  users[index].updatedAt = new Date().toISOString();
+  localStorage.setItem(USERS_REGISTRY_KEY, JSON.stringify(users));
+  return true;
+}
